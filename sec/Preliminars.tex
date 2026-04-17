@@ -1,0 +1,37 @@
+\section{Preliminars}
+
+Donarem un seguit de definicions i resultats previs que anirem usant al llarg del document. Les primeres dues ens ajudaran a parlar sobre el comportament asimptòtic de les funcions mentre que la resta és un resultat ja conegut de productes infinits que usarem més endavant.  
+
+\begin{defi}
+    Sigui $f, g\colon \RR\rightrightarrows \RR$ dues funcions tals que el límit $\lim_{x\to +\infty}f(x)/g(x)$ té sentit. Aleshores diem que \emph{$f$ és asimptòticament equivalent a $g$} i ho denotem per $f(x)\sim g(x)$ si aquest límit és $1$. 
+\end{defi}
+
+\begin{defi}
+    Sigui $f, g\colon \RR\rightrightarrows \RR$ dues funcions direm que $g$ és una \emph{fita superior asimptòtica de $f$} si existeix un $N\in \RR$ tal que $f(x)\leq g(x)$ per a tot $x\geq N$. 
+\end{defi}
+
+Sigui $(a_n)_{n\geq 0}\in \RR_{>-1}^\NN$ una successió de nombres.
+
+\begin{defi}
+    Diem que $\prod_{n\geq 0}a_n$ \emph{convergeix a $L\in \mathbb R_{> 0}$} si $\sum_{n\geq 0}\log(1+a_n)$ convergeix a $\log L$. Direm que \emph{divergeix a $0$} si $\sum_{n\geq 0}\log(1+a_n)$ divergeix a $-\infty$. Finalment, diem que \emph{divergeix a $+\infty$} si $\sum_{n\geq 0}\log(1+a_n)$ divergeix a $+\infty$.
+\end{defi}
+
+\begin{prop}\label{prop}
+    Sigui $(a_n)_{n\geq 0}\in \RR_{>-1}^\NN$ una successió de nombres tal que $\sum_{n\geq 0}\lvert a_n\rvert^2<+\infty$. Aleshores $\sum_{n\geq 0}a_n$ convergeix si i només si $\prod_{n\geq 0}(1+a_n)$ convergeix.
+\end{prop}
+\begin{proof}
+    Per $\lvert x\rvert \leq 1/2$,
+    \[
+    \log(1+x)=\sum_{n\geq 1}\frac{(-1)^{n+1}x^n}{n}\leq x+x^2\sum_{n\geq 0}\frac{1}{2^n(n+2)}<x+x^2.
+    \]
+    Llavors, ja que $\lvert a_n\rvert^2\to 0$, prenem $N\in \NN$ tal que $\lvert a_n\rvert \leq 1/2$ per $n\geq N$. Per tant\footnote{En cas que $a_n=0$ per algun $n$ considerem que 
+    \[
+    \frac{\log(1+a_n)-a_n}{a_n^2}:=0.
+    \]}, 
+    \[
+    \sum_{n\geq N}\log(1+a_n)=\sum_{n\geq N}a_n+\sum_{n\geq N}a_n^2\left(\frac{\log(1+a_n)-a_n}{a_n^2}\right).
+    \]
+\end{proof}
+
+
+

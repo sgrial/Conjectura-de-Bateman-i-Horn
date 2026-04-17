@@ -1,0 +1,39 @@
+\section{Demostració de la convergència}
+
+La part més complicada ja l'hem superada, ara només queda escriure el productori infinit com el d'una successió $(1+a_n)_{n\geq 0}$ i aplicar el la proposició \ref{prop}.
+
+\begin{thm}
+    El producte $C(f_1,\ldots,f_k)$ convergeix sota les condicions de la conjectura de Bateman i Horn.
+\end{thm}
+\begin{proof}
+    Notem que
+    \begin{align*}
+    \left(1-\frac{1}{p}\right)^{-k}\left(1-\frac{\omega_f(p)}{p}\right)&=\left(1+\frac{k}{p}+\frac{k(k+1)}{2p^2}+O\left(\frac {1}{p^3}\right)\right)\left(1-\frac{\omega_f(p)}{p}\right)\\
+    &=1+\frac{k-\omega_f(p)}{p}+\frac{B(p)}{p^2},
+    \end{align*}
+    on 
+    \[
+    B(p):=\frac{k(k+1)}{2}-k\omega_f(p)+O\left(\frac 1 p \right).
+    \]
+    A més, per $p$ prou gran,
+    \[
+    \lvert B(p)\rvert\leq \frac{k(k+1)}{2}+k\deg(f)+C
+    \]
+    on $C$ és una constant donada per $O\left(1/p \right)$. És a dir, $B(p)$ està uniformement fitada. Prenem 
+    \[
+    a_p:=\frac{k-\omega_f(p)}{p}+\frac{B(p)}{p^2}.
+    \]
+    Aleshores,
+    \[
+    \sum_{p \text{ primer}}a_p=\sum_{p\text{ primer}}\frac{k-\omega_f(p)}{p}+\sum_{p\text{ primer}}\frac{B(p)}{p^2}
+    \]
+    convergeix. D'altra banda, 
+    \[
+    \lvert a_p\rvert^2=O\left(\frac 1 {p^2}\right).
+    \]
+    Així doncs, per la proposició \ref{prop}, 
+    \[
+    \prod_{p\text{ primer}}(1+a_p)=\prod_{p\text{ primer}}\left(1-\frac{1}{p}\right)^{-k}\left(1-\frac{\omega_f(p)}{p}\right)
+    \]
+    convergeix.
+\end{proof}

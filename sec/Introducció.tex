@@ -1,0 +1,36 @@
+\section{Introducció}
+
+Recordem la conjectura de Bateman i Horn,
+\begin{cnj}[Bateman i Horn]
+Siguin $f_1,\ldots, f_k\in\mathbb Z[X]$ polinomis irreductibles diferents amb el coeficient d'exponent més elevat positiu. Per $x\in \mathbb Z_{\geq1}$, considerem el nombre
+\[
+Q(f_1,\ldots,f_k; x):=\#\{n\in \llbracket1,x\rrbracket \mid f_i(n)\text{ és primer per } i=1,\ldots,k\}.
+\]
+Suposem que $f:=f_1\cdots f_k$ no s'anu\lgem a completament mòdul cap primer. Aleshores,
+\[
+Q(f_1,\ldots,f_k;x)\sim \frac{C(f_1,\ldots, f_k)}{\prod_{i=1}^k\deg f_i}\int_2^x\frac{1}{(\log t)^k}\;\mathrm{d}t.
+\]
+on 
+\[
+C(f_1,\ldots, f_k):=\prod_{p\text{ primer}} \left(1-\frac{1}{p}\right)^{-k}\left(1-\frac{\omega_f(p)}{p}\right),
+\]
+i $\omega_f(p):=\#\{n\in \llbracket 1, p\rrbracket \mid f(n)\equiv 0 \pmod{p}\}$.
+\end{cnj}
+
+Aquesta dona lloc a coro\lgem aris força estudiats;
+\begin{coro}[Conjectura de Landau]
+    Si la conjectura de Bateman i Horn és certa aleshores no només concloem que hi ha infinits primers de la forma $n^2+1$ per $n\geq 1$ sinó que sabem com es comporten asimptòticament,
+    \[
+    Q(X^2+1; x)\sim C_{\emph{\text{Landau}}}\int_{[2,x]}\frac{1}{\log t}\,\mathrm{d}t,
+    \]
+    on $C_{\emph{\text{Landau}}}\approx 0.6864$.
+\end{coro}
+\begin{coro}[Primers bessons]
+    Si la conjectura de Bateman i Horn és certa aleshores sabem el comportament asimptòtic dels primers bessons ---i, de fet, el de primers $p$ tals que $p+k$ és primer per $k\geq 2$ parella---,
+    \[
+    \pi_2(x)\sim 2C_2\int_{[2,x]}\frac{1}{(\log t)^2}\,\mathrm{d}t,
+    \]
+    on $C_2\approx 0.6602$.
+\end{coro}
+
+Fins a dia d'avui, 17 d'abril de 2026, no tenim una demostració per a la qual. El que sí tenim, però, són fites superiors de $Q(f_1,\ldots, f_k,x)$ asimptòtiques i sabem que la constant $C(f_1,\ldots, f_k)$ convergeix sota les condicions de la conjectura. En aquest document ens centrarem a demostrar la convergència del producte infinit. 
